@@ -7,20 +7,24 @@
 
     <title>Portfólio - Lucas Maglio Chiabai</title>
 
+    <!-- Arquivo CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
+    <!-- Fonte do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap"
         rel="stylesheet"
     >
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- =========================
+         CABEÇALHO
+         ========================= -->
 
     <header>
 
@@ -32,7 +36,7 @@
                     lucas@portfolio:~$
                 </p>
 
-                <h1 class="tituloprincipal">
+                <h1>
                     Lucas<br>
                     Maglio.
                 </h1>
@@ -69,7 +73,6 @@
             <div class="foto-area">
 
                 <img
-                    class="imagemprincipal"
                     src="../imagens/imagem-lucas.jpg"
                     alt="Foto de perfil de Lucas Maglio Chiabai"
                 >
@@ -83,9 +86,11 @@
     </header>
 
 
-    <!-- NAVEGAÇÃO -->
+    <!-- =========================
+         MENU COM FLEXBOX
+         ========================= -->
 
-    <nav class="indice">
+    <nav class="menu">
 
         <a href="#sobre">Sobre</a>
 
@@ -108,7 +113,9 @@
     </nav>
 
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+         ========================= -->
 
     <main>
 
@@ -175,7 +182,7 @@
 
             <h2>Meus Conhecimentos</h2>
 
-            <p class="descricao-secao">
+            <p class="descricao">
                 Estas são algumas das tecnologias que estou estudando
                 atualmente durante minha formação.
             </p>
@@ -183,7 +190,7 @@
 
             <div class="tabela-container">
 
-                <table class="tabela">
+                <table>
 
                     <thead>
 
@@ -194,7 +201,6 @@
                         </tr>
 
                     </thead>
-
 
                     <tbody>
 
@@ -241,9 +247,10 @@
 
             <h2>Projeto Atual</h2>
 
-            <article class="repositorio">
 
-                <div class="repo-topo">
+            <article class="projeto">
+
+                <div class="projeto-topo">
 
                     <h3>
                         SistemaProjetos
@@ -256,7 +263,7 @@
                 </div>
 
 
-                <p class="repo-descricao">
+                <p class="projeto-descricao">
                     Projeto desenvolvido em Java que estou utilizando
                     para estudar e entender melhor classes, objetos,
                     coleções, regras de negócio e persistência de
@@ -264,20 +271,17 @@
                 </p>
 
 
-                <div class="repo-info">
+                <div class="tecnologias-projeto">
 
                     <span>Java</span>
-
                     <span>POO</span>
-
                     <span>Collections</span>
-
                     <span>CSV</span>
 
                 </div>
 
 
-                <div class="repo-nota">
+                <div class="readme">
 
                     <strong>
                         README.md
@@ -295,7 +299,7 @@
 
 
                 <a
-                    class="ver-repositorio"
+                    class="link-projeto"
                     href="https://github.com/1lucasmaglio/SistemaProjetos"
                     target="_blank"
                 >
@@ -307,7 +311,10 @@
         </section>
 
 
-        <!-- HOBBIES -->
+        <!-- =========================
+             HOBBIES
+             CARDS COM FLEXBOX
+             ========================= -->
 
         <section id="hobbies">
 
@@ -317,75 +324,85 @@
 
             <h2>Galeria dos Meus Hobbies</h2>
 
-            <p class="descricao-secao">
+            <p class="descricao">
                 Algumas das coisas que gosto de fazer quando não estou
                 estudando programação.
             </p>
 
 
-            <div class="imagens">
+            <!-- Container Flexbox -->
 
-                <figure>
+            <div class="galeria">
+
+
+                <!-- Card 1 -->
+
+                <div class="card-hobby">
 
                     <img
                         src="../imagens/homem-cantando.jpg"
                         alt="Pessoa cantando"
                     >
 
-                    <figcaption>
-                        Cantar
-                    </figcaption>
+                    <h3>Cantar</h3>
 
-                </figure>
+                    <p>
+                        Gosto de cantar e ouvir música no meu tempo livre.
+                    </p>
+
+                </div>
 
 
-                <figure>
+                <!-- Card 2 -->
+
+                <div class="card-hobby">
 
                     <img
                         src="../imagens/pessoa-jogando.webp"
                         alt="Pessoa jogando em um computador"
                     >
 
-                    <figcaption>
-                        Jogar
-                    </figcaption>
+                    <h3>Jogar</h3>
 
-                </figure>
+                    <p>
+                        Gosto de jogar no computador para me divertir.
+                    </p>
+
+                </div>
 
 
-                <figure>
+                <!-- Card 3 -->
+
+                <div class="card-hobby">
 
                     <img
                         src="../imagens/pessoa-lendo-livro.jpg"
                         alt="Pessoa lendo um livro"
                     >
 
-                    <figcaption>
-                        Ler
-                    </figcaption>
+                    <h3>Ler</h3>
 
-                </figure>
+                    <p>
+                        Gosto de ler livros e conhecer histórias novas.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <h3 class="subtitulo-hobbies">
+            <h3 class="titulo-hobbies">
                 Meus Hobbies
             </h3>
 
 
-            <ul class="hobbies-lista">
+            <ul class="lista-hobbies">
 
                 <li>Cantar</li>
-
                 <li>Escutar música</li>
-
                 <li>Jogar</li>
-
                 <li>Ler livros</li>
-
                 <li>Praticar inglês</li>
-
                 <li>Assistir séries e filmes</li>
 
             </ul>
@@ -403,14 +420,16 @@
 
             <h2>Contato</h2>
 
-            <p class="descricao-secao">
+            <p class="descricao">
                 Estou buscando minha primeira oportunidade de estágio
                 em desenvolvimento de software. Caso queira conversar
                 comigo, você pode utilizar um dos links abaixo.
             </p>
 
 
-            <ul class="links">
+            <!-- Links organizados com Flexbox -->
+
+            <ul class="links-contato">
 
                 <li>
 
@@ -447,33 +466,35 @@
             </ul>
 
 
-            <h3 class="contato-titulo">
+            <!-- FORMULÁRIO -->
+
+            <h3 class="titulo-contato">
                 Entre em contato
             </h3>
 
 
             <form class="formulario">
 
-                <label for="nomeContato">
+                <label for="nome">
                     Nome completo:
                 </label>
 
                 <input
                     type="text"
-                    id="nomeContato"
+                    id="nome"
                     name="nome"
                     placeholder="Digite seu nome"
                     required
                 >
 
 
-                <label for="emailContato">
+                <label for="email">
                     E-mail:
                 </label>
 
                 <input
                     type="email"
-                    id="emailContato"
+                    id="email"
                     name="email"
                     placeholder="Digite seu e-mail"
                     required
@@ -492,14 +513,11 @@
                 >
 
 
-                <label for="assuntoSelect">
+                <label for="tipo">
                     Tipo de contato:
                 </label>
 
-                <select
-                    id="assuntoSelect"
-                    name="tipo"
-                >
+                <select id="tipo" name="tipo">
 
                     <option value="duvida">
                         Dúvida
@@ -516,12 +534,12 @@
                 </select>
 
 
-                <label for="mensagemContato">
+                <label for="mensagem">
                     Mensagem:
                 </label>
 
                 <textarea
-                    id="mensagemContato"
+                    id="mensagem"
                     name="mensagem"
                     placeholder="Digite sua mensagem aqui..."
                     required
@@ -539,13 +557,13 @@
 
         <!-- CURIOSIDADE -->
 
-        <aside class="curiosidade-titulo">
+        <aside class="curiosidade">
 
             <h3>
                 📌 Curiosidade sobre mim
             </h3>
 
-            <p class="curiosidade">
+            <p>
                 Eu sou viciado em caldo verde 🥬
             </p>
 
@@ -554,9 +572,11 @@
     </main>
 
 
-    <!-- RODAPÉ -->
+    <!-- =========================
+         RODAPÉ
+         ========================= -->
 
-    <footer class="footer">
+    <footer>
 
         <p>
             © 2026 - Lucas Maglio Chiabai
