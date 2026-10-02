@@ -1,1 +1,1059 @@
+/* =========================================================
+   LUCAS MAGLIO CHIABAI — PORTFÓLIO
+   ========================================================= */
 
+
+/* =========================
+   VARIÁVEIS
+   ========================= */
+
+:root {
+    --fundo: #0c0c0d;
+    --fundo-secundario: #111113;
+    --superficie: #151517;
+    --superficie-hover: #19191c;
+
+    --texto: #f5f5f3;
+    --texto-secundario: #a4a4aa;
+    --texto-suave: #66666d;
+
+    --borda: #27272b;
+    --borda-clara: #36363c;
+
+    --destaque: #8c9eff;
+    --destaque-claro: #b6c0ff;
+    --destaque-fundo: rgba(140, 158, 255, 0.08);
+
+    --largura: 1180px;
+
+    --fonte: "Jost", Arial, sans-serif;
+
+    --mono:
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 5%,
+            rgba(140, 158, 255, 0.055),
+            transparent 25%
+        ),
+        var(--fundo);
+
+    color: var(--texto);
+
+    font-family: var(--fonte);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================
+   SELEÇÃO
+   ========================= */
+
+::selection {
+    background: var(--destaque);
+    color: #09090a;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    width: min(var(--largura), calc(100% - 48px));
+
+    min-height: 85vh;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   APRESENTAÇÃO
+   ========================= */
+
+.apresentacao {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(250px, 0.5fr);
+
+    align-items: center;
+
+    gap: clamp(50px, 8vw, 120px);
+
+    padding: 80px 0;
+}
+
+
+.texto-apresentacao {
+    max-width: 720px;
+}
+
+
+.terminal {
+    margin: 0 0 25px;
+
+    color: var(--destaque);
+
+    font-family: var(--mono);
+    font-size: 12px;
+}
+
+
+.tituloprincipal {
+    margin: 0;
+
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 600;
+
+    letter-spacing: -0.07em;
+    line-height: 0.85;
+}
+
+
+.texto-apresentacao h2 {
+    margin: 40px 0 15px;
+
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    font-weight: 450;
+}
+
+
+.texto-apresentacao > p:not(.terminal) {
+    max-width: 600px;
+
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   FOTO PRINCIPAL
+   ========================= */
+
+.foto-area {
+    width: 240px;
+
+    justify-self: end;
+
+    text-align: center;
+}
+
+
+.imagemprincipal {
+    width: 240px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--borda-clara);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.imagemprincipal:hover {
+    transform:
+        translateY(-5px)
+        scale(1.02);
+}
+
+
+.foto-area p {
+    color: var(--texto-suave);
+
+    font-family: var(--mono);
+    font-size: 10px;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.botao-principal,
+.botao-secundario {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding: 0 22px;
+
+    border-radius: 100px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.botao-principal {
+    background: var(--texto);
+    color: var(--fundo);
+}
+
+
+.botao-secundario {
+    border: 1px solid var(--borda-clara);
+}
+
+
+.botao-principal:hover,
+.botao-secundario:hover {
+    transform: translateY(-3px);
+}
+
+
+.botao-principal:hover {
+    background: var(--destaque-claro);
+}
+
+
+.botao-secundario:hover {
+    background: var(--superficie);
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+   ========================= */
+
+.indice {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    min-height: 70px;
+
+    padding: 0 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+
+    background:
+        rgba(12, 12, 13, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.indice a {
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.indice a:hover {
+    color: var(--destaque-claro);
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+main {
+    width: min(var(--largura), calc(100% - 48px));
+
+    margin: auto;
+}
+
+
+/* =========================
+   SEÇÕES
+   ========================= */
+
+section {
+    padding: 100px 0;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.nome-arquivo {
+    margin: 0 0 15px;
+
+    color: var(--destaque);
+
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+
+section > h2 {
+    margin: 0;
+
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    font-weight: 550;
+
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+
+.descricao-secao {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   SOBRE
+   ========================= */
+
+.sobre {
+    max-width: 800px;
+
+    margin: 50px 0 0 auto;
+}
+
+
+.sobre p {
+    margin: 0;
+
+    padding: 22px 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 18px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.sobre p:first-child {
+    border-top: 1px solid var(--borda);
+}
+
+
+.sobre strong {
+    color: var(--texto);
+}
+
+
+/* =========================
+   TABELA
+   ========================= */
+
+.tabela-container {
+    margin-top: 50px;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 14px;
+}
+
+
+.tabela {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--superficie);
+}
+
+
+.tabela th,
+.tabela td {
+    padding: 20px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.tabela th {
+    color: var(--texto);
+
+    background: var(--fundo-secundario);
+
+    font-family: var(--mono);
+    font-size: 12px;
+}
+
+
+.tabela td {
+    color: var(--texto-secundario);
+}
+
+
+.tabela tr:last-child td {
+    border-bottom: none;
+}
+
+
+.tabela tbody tr {
+    transition: background 0.2s ease;
+}
+
+
+.tabela tbody tr:hover {
+    background: var(--superficie-hover);
+}
+
+
+/* =========================
+   PROJETO
+   ========================= */
+
+.repositorio {
+    margin-top: 50px;
+
+    padding: clamp(25px, 5vw, 50px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #161618,
+            #111113
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    transition: 0.3s;
+}
+
+
+.repositorio:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--borda-clara);
+}
+
+
+.repo-topo {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.repo-topo h3 {
+    margin: 0;
+
+    font-family: var(--mono);
+    font-size: 20px;
+}
+
+
+.publico {
+    padding: 5px 10px;
+
+    color: var(--texto-suave);
+
+    border: 1px solid var(--borda-clara);
+
+    border-radius: 100px;
+
+    font-family: var(--mono);
+    font-size: 10px;
+}
+
+
+.repo-descricao {
+    max-width: 750px;
+
+    margin: 30px 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 17px;
+}
+
+
+.repo-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.repo-info span {
+    padding: 7px 12px;
+
+    color: var(--texto-secundario);
+
+    background: #101012;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 100px;
+
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+
+.repo-nota {
+    margin: 35px 0;
+
+    padding: 25px;
+
+    background: #0e0e10;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 10px;
+}
+
+
+.repo-nota strong {
+    color: var(--texto-suave);
+
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+
+.repo-nota p {
+    color: var(--texto-secundario);
+}
+
+
+.ver-repositorio {
+    display: inline-block;
+
+    padding-bottom: 3px;
+
+    color: var(--texto);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--texto);
+}
+
+
+.ver-repositorio:hover {
+    color: var(--destaque-claro);
+
+    border-color: var(--destaque-claro);
+}
+
+
+/* =========================
+   GALERIA
+   ========================= */
+
+.imagens {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.imagens figure {
+    margin: 0;
+
+    overflow: hidden;
+
+    background: var(--superficie);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 14px;
+}
+
+
+.imagens img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.imagens figure:hover img {
+    transform: scale(1.04);
+}
+
+
+.imagens figcaption {
+    padding: 15px;
+
+    color: var(--texto-secundario);
+
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+
+/* =========================
+   LISTA DE HOBBIES
+   ========================= */
+
+.subtitulo-hobbies {
+    margin-top: 60px;
+
+    font-size: 25px;
+}
+
+
+.hobbies-lista {
+    margin: 30px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    border-top: 1px solid var(--borda);
+}
+
+
+.hobbies-lista li {
+    padding: 20px 5px;
+
+    color: var(--texto-secundario);
+
+    font-size: 18px;
+
+    border-bottom: 1px solid var(--borda);
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.hobbies-lista li:hover {
+    padding-left: 12px;
+
+    color: var(--texto);
+}
+
+
+/* =========================
+   CONTATO
+   ========================= */
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 40px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.links a {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 43px;
+
+    padding: 0 18px;
+
+    color: var(--texto-secundario);
+
+    border: 1px solid var(--borda-clara);
+
+    border-radius: 100px;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.links a:hover {
+    color: var(--texto);
+
+    background: var(--superficie);
+
+    transform: translateY(-3px);
+}
+
+
+.contato-titulo {
+    margin-top: 80px;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   FORMULÁRIO
+   ========================= */
+
+.formulario {
+    max-width: 760px;
+
+    margin: 40px 0 0 auto;
+}
+
+
+.formulario label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--texto-secundario);
+
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 13px 5px;
+
+    color: var(--texto);
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid var(--borda-clara);
+
+    outline: none;
+}
+
+
+.formulario select {
+    background: var(--fundo);
+
+    cursor: pointer;
+}
+
+
+.formulario textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+    border-bottom-color: var(--destaque);
+}
+
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: var(--texto-suave);
+}
+
+
+.formulario button {
+    min-width: 170px;
+    min-height: 47px;
+
+    padding: 0 25px;
+
+    color: var(--fundo);
+
+    background: var(--texto);
+
+    border: none;
+
+    border-radius: 100px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.formulario button:hover {
+    background: var(--destaque-claro);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CURIOSIDADE
+   ========================= */
+
+.curiosidade-titulo {
+    margin: 70px 0;
+
+    padding: 30px;
+
+    background: var(--destaque-fundo);
+
+    border: 1px solid rgba(140, 158, 255, 0.16);
+
+    border-radius: 14px;
+}
+
+
+.curiosidade-titulo h3 {
+    margin-top: 0;
+}
+
+
+.curiosidade {
+    margin-bottom: 0;
+
+    color: var(--texto-secundario);
+
+    font-family: var(--mono);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    width: min(var(--largura), calc(100% - 48px));
+
+    min-height: 100px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top: 1px solid var(--borda);
+}
+
+
+.footer p {
+    margin: 0;
+
+    color: var(--texto-suave);
+
+    font-family: var(--mono);
+    font-size: 10px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 850px) {
+
+    .apresentacao {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .foto-area {
+        justify-self: start;
+    }
+
+
+    .indice {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+    }
+
+
+    .imagens {
+        grid-template-columns: 1fr;
+    }
+
+
+    .imagens img {
+        height: 300px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header,
+    main,
+    .footer {
+        width: min(
+            100% - 30px,
+            var(--largura)
+        );
+    }
+
+
+    header {
+        min-height: auto;
+    }
+
+
+    .apresentacao {
+        padding: 70px 0;
+    }
+
+
+    .tituloprincipal {
+        font-size: 4rem;
+    }
+
+
+    .foto-area,
+    .imagemprincipal {
+        width: 190px;
+    }
+
+
+    .imagemprincipal {
+        height: 190px;
+    }
+
+
+    .indice {
+        gap: 22px;
+
+        padding: 0 15px;
+    }
+
+
+    section {
+        padding: 75px 0;
+    }
+
+
+    section > h2 {
+        font-size: 2.8rem;
+    }
+
+
+    .repo-topo {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .footer {
+        padding: 30px 0;
+
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
