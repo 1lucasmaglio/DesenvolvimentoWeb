@@ -1,43 +1,5 @@
-/* =========================================================
-   LUCAS MAGLIO CHIABAI — PORTFÓLIO
-   ========================================================= */
-
-
 /* =========================
-   VARIÁVEIS
-   ========================= */
-
-:root {
-    --fundo: #0c0c0d;
-    --fundo-secundario: #111113;
-    --superficie: #151517;
-    --superficie-hover: #19191c;
-
-    --texto: #f5f5f3;
-    --texto-secundario: #a4a4aa;
-    --texto-suave: #66666d;
-
-    --borda: #27272b;
-    --borda-clara: #36363c;
-
-    --destaque: #8c9eff;
-    --destaque-claro: #b6c0ff;
-    --destaque-fundo: rgba(140, 158, 255, 0.08);
-
-    --largura: 1180px;
-
-    --fonte: "Jost", Arial, sans-serif;
-
-    --mono:
-        Consolas,
-        "Liberation Mono",
-        Menlo,
-        monospace;
-}
-
-
-/* =========================
-   RESET
+   CONFIGURAÇÕES GERAIS
    ========================= */
 
 * {
@@ -51,17 +13,11 @@ html {
 body {
     margin: 0;
 
-    background:
-        radial-gradient(
-            circle at 80% 5%,
-            rgba(140, 158, 255, 0.055),
-            transparent 25%
-        ),
-        var(--fundo);
+    background-color: #0c0c0d;
+    color: #f5f5f3;
 
-    color: var(--texto);
+    font-family: "Jost", Arial, sans-serif;
 
-    font-family: var(--fonte);
     line-height: 1.6;
 }
 
@@ -70,34 +26,14 @@ img {
     max-width: 100%;
 }
 
-a {
-    color: inherit;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
 
 /* =========================
-   SELEÇÃO
-   ========================= */
-
-::selection {
-    background: var(--destaque);
-    color: #09090a;
-}
-
-
-/* =========================
-   HEADER
+   CABEÇALHO
    ========================= */
 
 header {
-    width: min(var(--largura), calc(100% - 48px));
+    width: 90%;
+    max-width: 1180px;
 
     min-height: 85vh;
 
@@ -115,60 +51,63 @@ header {
 .apresentacao {
     width: 100%;
 
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.2fr)
-        minmax(250px, 0.5fr);
+    display: flex;
 
     align-items: center;
+    justify-content: space-between;
 
-    gap: clamp(50px, 8vw, 120px);
+    gap: 80px;
 
     padding: 80px 0;
 }
 
 
 .texto-apresentacao {
+    width: 65%;
     max-width: 720px;
 }
 
 
 .terminal {
-    margin: 0 0 25px;
+    margin-bottom: 25px;
 
-    color: var(--destaque);
+    color: #8c9eff;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 12px;
 }
 
 
-.tituloprincipal {
+.texto-apresentacao h1 {
     margin: 0;
 
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: 100px;
     font-weight: 600;
 
-    letter-spacing: -0.07em;
-    line-height: 0.85;
+    line-height: 0.9;
 }
 
 
 .texto-apresentacao h2 {
-    margin: 40px 0 15px;
+    margin-top: 40px;
+    margin-bottom: 15px;
 
-    font-size: clamp(1.3rem, 2vw, 1.8rem);
-    font-weight: 450;
+    font-size: 28px;
+    font-weight: 500;
 }
 
 
-.texto-apresentacao > p:not(.terminal) {
+.texto-apresentacao > p {
     max-width: 600px;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
     font-size: 16px;
+}
+
+
+.texto-apresentacao .terminal {
+    color: #8c9eff;
 }
 
 
@@ -179,53 +118,43 @@ header {
 .foto-area {
     width: 240px;
 
-    justify-self: end;
-
     text-align: center;
 }
 
 
-.imagemprincipal {
+.foto-area img {
     width: 240px;
     height: 240px;
 
     object-fit: cover;
 
+    border: 1px solid #36363c;
     border-radius: 50%;
 
-    border: 1px solid var(--borda-clara);
-
-    box-shadow:
-        0 25px 60px
-        rgba(0, 0, 0, 0.35);
-
-    transition:
-        transform 0.3s ease;
+    box-shadow: 0 20px 40px #000000;
 }
 
 
-.imagemprincipal:hover {
-    transform:
-        translateY(-5px)
-        scale(1.02);
+.foto-area img:hover {
+    transform: scale(1.03);
 }
 
 
 .foto-area p {
-    color: var(--texto-suave);
+    color: #66666d;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 10px;
 }
 
 
 /* =========================
    BOTÕES
+   FLEXBOX
    ========================= */
 
 .botoes {
     display: flex;
-    flex-wrap: wrap;
 
     gap: 12px;
 
@@ -235,108 +164,88 @@ header {
 
 .botao-principal,
 .botao-secundario {
-    display: inline-flex;
+    padding: 12px 22px;
 
-    align-items: center;
-    justify-content: center;
-
-    min-height: 45px;
-
-    padding: 0 22px;
-
-    border-radius: 100px;
+    border-radius: 25px;
 
     font-size: 13px;
     font-weight: 600;
 
     text-decoration: none;
-
-    transition: 0.3s;
 }
 
 
 .botao-principal {
-    background: var(--texto);
-    color: var(--fundo);
+    background-color: #f5f5f3;
+    color: #0c0c0d;
 }
 
 
 .botao-secundario {
-    border: 1px solid var(--borda-clara);
-}
+    color: #f5f5f3;
 
-
-.botao-principal:hover,
-.botao-secundario:hover {
-    transform: translateY(-3px);
+    border: 1px solid #36363c;
 }
 
 
 .botao-principal:hover {
-    background: var(--destaque-claro);
+    background-color: #b6c0ff;
 }
 
 
 .botao-secundario:hover {
-    background: var(--superficie);
+    background-color: #151517;
 }
 
 
 /* =========================
-   NAVEGAÇÃO
+   MENU
+   FLEXBOX
    ========================= */
 
-.indice {
+.menu {
     position: sticky;
 
     top: 0;
 
-    z-index: 100;
+    z-index: 10;
 
-    min-height: 70px;
-
-    padding: 0 24px;
+    padding: 22px;
 
     display: flex;
 
-    align-items: center;
     justify-content: center;
 
     gap: 35px;
 
-    background:
-        rgba(12, 12, 13, 0.92);
+    background-color: #111113;
 
-    backdrop-filter: blur(15px);
-
-    border-top: 1px solid var(--borda);
-    border-bottom: 1px solid var(--borda);
+    border-top: 1px solid #27272b;
+    border-bottom: 1px solid #27272b;
 }
 
 
-.indice a {
-    color: var(--texto-secundario);
+.menu a {
+    color: #a4a4aa;
 
     font-size: 13px;
-    font-weight: 500;
 
     text-decoration: none;
-
-    transition: color 0.2s ease;
 }
 
 
-.indice a:hover {
-    color: var(--destaque-claro);
+.menu a:hover {
+    color: #b6c0ff;
 }
 
 
 /* =========================
-   MAIN
+   CONTEÚDO PRINCIPAL
    ========================= */
 
 main {
-    width: min(var(--largura), calc(100% - 48px));
+    width: 90%;
+    max-width: 1180px;
 
     margin: auto;
 }
@@ -349,50 +258,50 @@ main {
 section {
     padding: 100px 0;
 
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid #27272b;
 }
 
 
 .nome-arquivo {
-    margin: 0 0 15px;
+    margin-bottom: 15px;
 
-    color: var(--destaque);
+    color: #8c9eff;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 11px;
 }
 
 
 section > h2 {
-    margin: 0;
+    margin-top: 0;
 
-    font-size: clamp(2.7rem, 6vw, 5rem);
-    font-weight: 550;
+    font-size: 60px;
+    font-weight: 600;
 
-    letter-spacing: -0.05em;
     line-height: 1;
 }
 
 
-.descricao-secao {
+.descricao {
     max-width: 650px;
 
     margin-top: 25px;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
     font-size: 16px;
 }
 
 
 /* =========================
-   SOBRE
+   SOBRE MIM
    ========================= */
 
 .sobre {
     max-width: 800px;
 
-    margin: 50px 0 0 auto;
+    margin-top: 50px;
+    margin-left: auto;
 }
 
 
@@ -401,21 +310,21 @@ section > h2 {
 
     padding: 22px 0;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
     font-size: 18px;
 
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid #27272b;
 }
 
 
 .sobre p:first-child {
-    border-top: 1px solid var(--borda);
+    border-top: 1px solid #27272b;
 }
 
 
 .sobre strong {
-    color: var(--texto);
+    color: #f5f5f3;
 }
 
 
@@ -428,58 +337,48 @@ section > h2 {
 
     overflow-x: auto;
 
-    border: 1px solid var(--borda);
+    border: 1px solid #27272b;
 
     border-radius: 14px;
 }
 
 
-.tabela {
+table {
     width: 100%;
 
     border-collapse: collapse;
 
-    background: var(--superficie);
+    background-color: #151517;
 }
 
 
-.tabela th,
-.tabela td {
+th,
+td {
     padding: 20px;
 
     text-align: left;
 
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid #27272b;
 }
 
 
-.tabela th {
-    color: var(--texto);
+th {
+    background-color: #111113;
 
-    background: var(--fundo-secundario);
+    color: #f5f5f3;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 12px;
 }
 
 
-.tabela td {
-    color: var(--texto-secundario);
+td {
+    color: #a4a4aa;
 }
 
 
-.tabela tr:last-child td {
-    border-bottom: none;
-}
-
-
-.tabela tbody tr {
-    transition: background 0.2s ease;
-}
-
-
-.tabela tbody tr:hover {
-    background: var(--superficie-hover);
+tbody tr:hover {
+    background-color: #19191c;
 }
 
 
@@ -487,47 +386,34 @@ section > h2 {
    PROJETO
    ========================= */
 
-.repositorio {
+.projeto {
     margin-top: 50px;
 
-    padding: clamp(25px, 5vw, 50px);
+    padding: 45px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #161618,
-            #111113
-        );
+    background-color: #151517;
 
-    border: 1px solid var(--borda);
+    border: 1px solid #27272b;
 
     border-radius: 18px;
-
-    transition: 0.3s;
 }
 
 
-.repositorio:hover {
-    transform: translateY(-4px);
+/* Flexbox para organizar
+   o nome e o Public */
 
-    border-color: var(--borda-clara);
-}
-
-
-.repo-topo {
+.projeto-topo {
     display: flex;
 
     align-items: center;
     justify-content: space-between;
-
-    gap: 20px;
 }
 
 
-.repo-topo h3 {
+.projeto-topo h3 {
     margin: 0;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 20px;
 }
 
@@ -535,152 +421,162 @@ section > h2 {
 .publico {
     padding: 5px 10px;
 
-    color: var(--texto-suave);
+    color: #66666d;
 
-    border: 1px solid var(--borda-clara);
+    border: 1px solid #36363c;
 
-    border-radius: 100px;
+    border-radius: 20px;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 10px;
 }
 
 
-.repo-descricao {
+.projeto-descricao {
     max-width: 750px;
 
     margin: 30px 0;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
     font-size: 17px;
 }
 
 
-.repo-info {
+/* Flexbox para as tecnologias */
+
+.tecnologias-projeto {
     display: flex;
-    flex-wrap: wrap;
 
     gap: 10px;
 }
 
 
-.repo-info span {
+.tecnologias-projeto span {
     padding: 7px 12px;
 
-    color: var(--texto-secundario);
+    background-color: #101012;
+    color: #a4a4aa;
 
-    background: #101012;
+    border: 1px solid #27272b;
 
-    border: 1px solid var(--borda);
+    border-radius: 20px;
 
-    border-radius: 100px;
-
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 11px;
 }
 
 
-.repo-nota {
+.readme {
     margin: 35px 0;
 
     padding: 25px;
 
-    background: #0e0e10;
+    background-color: #0e0e10;
 
-    border: 1px solid var(--borda);
+    border: 1px solid #27272b;
 
     border-radius: 10px;
 }
 
 
-.repo-nota strong {
-    color: var(--texto-suave);
+.readme strong {
+    color: #66666d;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 11px;
 }
 
 
-.repo-nota p {
-    color: var(--texto-secundario);
+.readme p {
+    color: #a4a4aa;
 }
 
 
-.ver-repositorio {
-    display: inline-block;
-
-    padding-bottom: 3px;
-
-    color: var(--texto);
+.link-projeto {
+    color: #f5f5f3;
 
     font-size: 13px;
     font-weight: 600;
 
     text-decoration: none;
 
-    border-bottom: 1px solid var(--texto);
+    border-bottom: 1px solid #f5f5f3;
 }
 
 
-.ver-repositorio:hover {
-    color: var(--destaque-claro);
+.link-projeto:hover {
+    color: #b6c0ff;
 
-    border-color: var(--destaque-claro);
+    border-color: #b6c0ff;
 }
 
 
 /* =========================
-   GALERIA
+   GALERIA DE HOBBIES
+   FLEXBOX
    ========================= */
 
-.imagens {
-    margin-top: 50px;
+.galeria {
+    display: flex;
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
+    justify-content: space-between;
 
     gap: 20px;
+
+    margin-top: 50px;
 }
 
 
-.imagens figure {
-    margin: 0;
+/* Cada hobby é um card */
 
-    overflow: hidden;
+.card-hobby {
+    width: 33%;
 
-    background: var(--superficie);
+    background-color: #151517;
 
-    border: 1px solid var(--borda);
+    border: 1px solid #27272b;
 
     border-radius: 14px;
+
+    overflow: hidden;
 }
 
 
-.imagens img {
+/* Imagem do card */
+
+.card-hobby img {
     width: 100%;
     height: 230px;
 
     object-fit: cover;
-
-    transition: transform 0.4s ease;
 }
 
 
-.imagens figure:hover img {
-    transform: scale(1.04);
+/* Título do card */
+
+.card-hobby h3 {
+    margin: 20px 20px 5px;
+
+    font-size: 20px;
 }
 
 
-.imagens figcaption {
-    padding: 15px;
+/* Texto do card */
 
-    color: var(--texto-secundario);
+.card-hobby p {
+    margin: 0 20px 20px;
 
-    font-family: var(--mono);
-    font-size: 11px;
+    color: #a4a4aa;
+
+    font-size: 14px;
+}
+
+
+/* Hover simples */
+
+.card-hobby:hover {
+    border-color: #8c9eff;
 }
 
 
@@ -688,57 +584,51 @@ section > h2 {
    LISTA DE HOBBIES
    ========================= */
 
-.subtitulo-hobbies {
+.titulo-hobbies {
     margin-top: 60px;
 
     font-size: 25px;
 }
 
 
-.hobbies-lista {
-    margin: 30px 0 0;
+.lista-hobbies {
+    margin-top: 30px;
 
     padding: 0;
 
     list-style: none;
 
-    border-top: 1px solid var(--borda);
+    border-top: 1px solid #27272b;
 }
 
 
-.hobbies-lista li {
+.lista-hobbies li {
     padding: 20px 5px;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
     font-size: 18px;
 
-    border-bottom: 1px solid var(--borda);
-
-    transition:
-        color 0.2s ease,
-        padding-left 0.2s ease;
+    border-bottom: 1px solid #27272b;
 }
 
 
-.hobbies-lista li:hover {
-    padding-left: 12px;
-
-    color: var(--texto);
+.lista-hobbies li:hover {
+    color: #f5f5f3;
 }
 
 
 /* =========================
-   CONTATO
+   LINKS DE CONTATO
+   FLEXBOX
    ========================= */
 
-.links {
+.links-contato {
     display: flex;
-    flex-wrap: wrap;
 
     gap: 10px;
 
-    margin: 40px 0 0;
+    margin-top: 40px;
 
     padding: 0;
 
@@ -746,42 +636,27 @@ section > h2 {
 }
 
 
-.links a {
-    display: inline-flex;
+.links-contato a {
+    display: block;
 
-    align-items: center;
+    padding: 10px 18px;
 
-    min-height: 43px;
+    color: #a4a4aa;
 
-    padding: 0 18px;
+    border: 1px solid #36363c;
 
-    color: var(--texto-secundario);
-
-    border: 1px solid var(--borda-clara);
-
-    border-radius: 100px;
+    border-radius: 25px;
 
     font-size: 12px;
 
     text-decoration: none;
-
-    transition: 0.3s;
 }
 
 
-.links a:hover {
-    color: var(--texto);
+.links-contato a:hover {
+    color: #f5f5f3;
 
-    background: var(--superficie);
-
-    transform: translateY(-3px);
-}
-
-
-.contato-titulo {
-    margin-top: 80px;
-
-    font-size: 30px;
+    background-color: #151517;
 }
 
 
@@ -789,10 +664,18 @@ section > h2 {
    FORMULÁRIO
    ========================= */
 
+.titulo-contato {
+    margin-top: 80px;
+
+    font-size: 30px;
+}
+
+
 .formulario {
     max-width: 760px;
 
-    margin: 40px 0 0 auto;
+    margin-top: 40px;
+    margin-left: auto;
 }
 
 
@@ -801,9 +684,9 @@ section > h2 {
 
     margin-bottom: 7px;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 11px;
 }
 
@@ -817,22 +700,14 @@ section > h2 {
 
     padding: 13px 5px;
 
-    color: var(--texto);
+    background-color: transparent;
 
-    background: transparent;
+    color: #f5f5f3;
 
     border: none;
-
-    border-bottom: 1px solid var(--borda-clara);
+    border-bottom: 1px solid #36363c;
 
     outline: none;
-}
-
-
-.formulario select {
-    background: var(--fundo);
-
-    cursor: pointer;
 }
 
 
@@ -843,45 +718,36 @@ section > h2 {
 }
 
 
-.formulario input:focus,
-.formulario textarea:focus,
-.formulario select:focus {
-    border-bottom-color: var(--destaque);
+.formulario select {
+    background-color: #0c0c0d;
 }
 
 
-.formulario input::placeholder,
-.formulario textarea::placeholder {
-    color: var(--texto-suave);
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+    border-bottom-color: #8c9eff;
 }
 
 
 .formulario button {
-    min-width: 170px;
-    min-height: 47px;
+    padding: 14px 25px;
 
-    padding: 0 25px;
-
-    color: var(--fundo);
-
-    background: var(--texto);
+    background-color: #f5f5f3;
+    color: #0c0c0d;
 
     border: none;
 
-    border-radius: 100px;
+    border-radius: 25px;
 
     font-weight: 600;
 
     cursor: pointer;
-
-    transition: 0.3s;
 }
 
 
 .formulario button:hover {
-    background: var(--destaque-claro);
-
-    transform: translateY(-3px);
+    background-color: #b6c0ff;
 }
 
 
@@ -889,171 +755,194 @@ section > h2 {
    CURIOSIDADE
    ========================= */
 
-.curiosidade-titulo {
+.curiosidade {
     margin: 70px 0;
 
     padding: 30px;
 
-    background: var(--destaque-fundo);
+    background-color: #151517;
 
-    border: 1px solid rgba(140, 158, 255, 0.16);
+    border: 1px solid #36363c;
 
     border-radius: 14px;
 }
 
 
-.curiosidade-titulo h3 {
+.curiosidade h3 {
     margin-top: 0;
 }
 
 
-.curiosidade {
+.curiosidade p {
     margin-bottom: 0;
 
-    color: var(--texto-secundario);
+    color: #a4a4aa;
 
-    font-family: var(--mono);
+    font-family: monospace;
 }
 
 
 /* =========================
-   FOOTER
+   RODAPÉ
+   FLEXBOX
    ========================= */
 
-.footer {
-    width: min(var(--largura), calc(100% - 48px));
-
-    min-height: 100px;
+footer {
+    width: 90%;
+    max-width: 1180px;
 
     margin: auto;
 
+    padding: 35px 0;
+
     display: flex;
 
-    align-items: center;
     justify-content: space-between;
 
-    gap: 30px;
-
-    border-top: 1px solid var(--borda);
+    border-top: 1px solid #27272b;
 }
 
 
-.footer p {
+footer p {
     margin: 0;
 
-    color: var(--texto-suave);
+    color: #66666d;
 
-    font-family: var(--mono);
+    font-family: monospace;
     font-size: 10px;
 }
 
 
 /* =========================
-   RESPONSIVIDADE
+   TABLET
    ========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
+
+    /* Cabeçalho fica vertical */
 
     .apresentacao {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+
+        align-items: flex-start;
 
         gap: 50px;
     }
 
 
-    .foto-area {
-        justify-self: start;
+    .texto-apresentacao {
+        width: 100%;
     }
 
 
-    .indice {
-        justify-content: flex-start;
-
-        overflow-x: auto;
+    .texto-apresentacao h1 {
+        font-size: 70px;
     }
 
 
-    .imagens {
-        grid-template-columns: 1fr;
+    /* Menu pode quebrar linha */
+
+    .menu {
+        flex-wrap: wrap;
+
+        gap: 20px;
     }
 
 
-    .imagens img {
-        height: 300px;
+    /* Cards ficam um embaixo do outro */
+
+    .galeria {
+        flex-direction: column;
+    }
+
+
+    .card-hobby {
+        width: 100%;
+    }
+
+
+    /* Links podem quebrar linha */
+
+    .links-contato {
+        flex-wrap: wrap;
+    }
+
+
+    /* Tecnologias podem quebrar linha */
+
+    .tecnologias-projeto {
+        flex-wrap: wrap;
     }
 
 }
 
 
-@media (max-width: 600px) {
+/* =========================
+   CELULAR
+   ========================= */
 
-    header,
-    main,
-    .footer {
-        width: min(
-            100% - 30px,
-            var(--largura)
-        );
-    }
-
+@media (max-width: 500px) {
 
     header {
         min-height: auto;
     }
 
 
-    .apresentacao {
-        padding: 70px 0;
+    .texto-apresentacao h1 {
+        font-size: 55px;
     }
 
 
-    .tituloprincipal {
-        font-size: 4rem;
+    .texto-apresentacao h2 {
+        font-size: 22px;
     }
 
 
-    .foto-area,
-    .imagemprincipal {
+    .foto-area {
         width: 190px;
     }
 
 
-    .imagemprincipal {
+    .foto-area img {
+        width: 190px;
         height: 190px;
     }
 
 
-    .indice {
-        gap: 22px;
-
-        padding: 0 15px;
-    }
-
-
     section {
-        padding: 75px 0;
+        padding: 70px 0;
     }
 
 
     section > h2 {
-        font-size: 2.8rem;
+        font-size: 42px;
     }
 
 
-    .repo-topo {
-        align-items: flex-start;
-
-        flex-direction: column;
+    .projeto {
+        padding: 25px;
     }
 
 
-    .footer {
-        padding: 30px 0;
+    .projeto-topo {
+        display: block;
+    }
 
-        align-items: flex-start;
-        flex-direction: column;
 
-        gap: 10px;
+    .publico {
+        display: inline-block;
+
+        margin-top: 15px;
+    }
+
+
+    footer {
+        display: block;
+    }
+
+
+    footer p {
+        margin-bottom: 10px;
     }
 
 }
