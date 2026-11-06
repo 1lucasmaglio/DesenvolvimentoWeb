@@ -12,7 +12,7 @@ function alterarTitulo() {
     let nome = prompt("Digite seu nome:");
 
     if (nome !== null && nome !== "") {
-        document.getElementById("titulo-principal").innerHTML = nome;
+        document.getElementById("titulo-principal").textContent = nome;
     }
 }
 
@@ -21,7 +21,7 @@ let clique = 0;
 
 function contarClique() {
     clique = clique + 1;
-    document.getElementById("contador").innerHTML = clique;
+    document.getElementById("contador").textContent = clique;
 }
 
 // Alternar entre tema escuro e tema cinza
@@ -29,31 +29,44 @@ function alternarTema() {
     document.body.classList.toggle("tema-claro");
 }
 
+// Formulário de contato
 document.querySelector(".formulario").addEventListener("submit", function(e) {
     e.preventDefault();
 
     let nome = document.getElementById("nome").value;
     let email = document.getElementById("email").value;
     let mensagem = document.getElementById("mensagem").value;
+    let feedback = document.getElementById("feedback");
 
+    // Limpa a mensagem anterior
+    feedback.textContent = "";
+    feedback.className = "";
+
+    // Validação do nome
     if (nome.trim().length < 3) {
-        alert("Nome deve ter pelo menos 3 caracteres.");
+        feedback.textContent = "Nome deve ter pelo menos 3 caracteres.";
+        feedback.className = "erro";
         return;
     }
 
+    // Validação do e-mail
     if (!email.includes("@") || !email.includes(".")) {
-        alert("E-mail inválido. Digite um e-mail válido.");
+        feedback.textContent = "E-mail inválido. Digite um e-mail válido.";
+        feedback.className = "erro";
         return;
     }
 
+    // Validação da mensagem
     if (mensagem.trim().length < 10) {
-        alert("Mensagem deve ter pelo menos 10 caracteres.");
+        feedback.textContent = "Mensagem deve ter pelo menos 10 caracteres.";
+        feedback.className = "erro";
         return;
     }
 
-    alert("✅ Formulário preenchido com sucesso!");
+    // Formulário preenchido corretamente
+    feedback.textContent = "Formulário preenchido com sucesso!";
+    feedback.className = "sucesso";
 
+    // Limpa o formulário
     this.reset();
 });
-
-
