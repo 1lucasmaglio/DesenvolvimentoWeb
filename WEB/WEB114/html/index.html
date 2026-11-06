@@ -371,6 +371,7 @@
                         name="nome"
                         placeholder="Digite seu nome"
                         required
+                        minlength="3"
                     >
 
                     <label for="email">E-mail:</label>
@@ -405,9 +406,11 @@
                         name="mensagem"
                         placeholder="Digite sua mensagem aqui..."
                         required
+                        minlength="10"
                     ></textarea>
 
                     <button type="submit">Enviar mensagem</button>
+                    <p id="feedback"></p>
 
                 </form>
             </section>
