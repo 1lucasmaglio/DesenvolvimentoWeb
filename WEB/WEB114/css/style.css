@@ -1108,3 +1108,54 @@ body.tema-claro .formulario select {
     color: #292929 !important;
     border-color: #aaaaaa !important;
 }
+
+
+/* Mensagens do formulário */
+
+#feedback {
+    display: none;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Mensagem de erro */
+
+#feedback.erro {
+    display: block;
+
+    color: #ffb4ab;
+    background-color: #211416;
+
+    border: 1px solid #693b3e;
+}
+
+/* Mensagem de sucesso */
+
+#feedback.sucesso {
+    display: block;
+
+    color: #b7e4c7;
+    background-color: #142019;
+
+    border: 1px solid #315c43;
+}
+
+/* Tema cinza */
+
+body.tema-claro #feedback.erro {
+    color: #721c24 !important;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+body.tema-claro #feedback.sucesso {
+    color: #155724 !important;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
